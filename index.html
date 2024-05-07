@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DncWeather</title>
+</head>
+<body>
+    <!--barra de navegação-->
+    <nav id="menu-horizontal">
+        <div>
+            <h1>DncWeather</h1>
+        </div>
+        <div id="Links">
+            <a href="" class="meu-link">Endereços</a>
+            <a href="" class="meu-link">Previsão do tempo</a>
+        </div>
+    </nav>
+    <!--cabeçalho-->
+    <header id="cabeçalho">
+        <div>
+            <h1>Descubra Mais com Precisão: <br>
+                Previsões do Tempo e endereços <br>  
+                em tempo real.</h1>
+        </div>
+        <div>
+            <img class="Icones" src="Icone/Icone.svg">
+        </div>
+        
+    </header>
+    <!--sessão-->
+    <section>
+        <div id="formulario">
+        <form action="https://formspree.io/f/mrgnrpzo" method="post">
+            <p>Primeiro Nome:</p>
+            <input class="Inputs" type="text" name="Nome" placeholder="Insira seu primeiro nome">
+            
+            <p>E-mail:</p>
+            <input id="e-mail" class="Inputs" type="text" name="E-mail"  placeholder="Insira seu e-mail">
+
+            <p>Digite o CEP:</p>
+            <input class="Inputs" type="text" name="CEP" id="CEP"placeholder="Insira seu CEP">
+
+            <p>Digite a latitude e longitude para saber a previsão:</p>
+            <input  class="Inputs" type="text" name="Latitude" id="Latitude" placeholder="Latitude">
+            <input class="Inputs" type="text" name="Longitude" id="Longitude" placeholder="Longitude">
+            <br>
+            <button onclick="getAddresByCep() ; getPrevisao()" id="button" name="Acesso">Acessar</button>
+        </form>
+        </div>
+
+        <div id="Cep-resultado">
+            <div id="Intro-info">
+                <h1>Resultado da busca por CEP:</h1>
+                <img src="Icone/Cep.svg">
+            </div>
+        
+            <div id="info-fixo">
+                <p class="Info">Logradouro/nome</p>
+                <p class="Info">Bairro/Distrito</p>
+                <p class="Info">Localidade/UF</p>
+            </div>
+
+            <div id="info-variavel">
+                <p class="Varia" id="rua"></p>
+                <p class="Varia" id="bairro"></p>
+                <p class="Varia" id="uf"></p>
+            </div>
+        </div>
+
+        <div id="Previsao">
+            <div id="Titulo-previsao">
+                <h1>Previsão do tempo na região:</h1>
+                <img src="Icone/Nuvem.svg">
+            </div>
+            <div id="res-previsao">
+                <p>Previsão de tempo de acordo com a região:<span id="Resultado"></span></p>
+            </div>
+           
+        </div>
+    </section>
+    <!--rodapé-->
+    <footer>
+        <a href="" id="link">Termos de Uso|Politica de Privacidade</a>
+    </footer>
+
+    <script src="cep.js"></script>
+    <script src="previsao.js"></script>
+</body>
+</html>
